@@ -12,23 +12,25 @@ import { useState } from "react";
 
 const login = () => {
   const route = useRouter();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const ValidEmail = "abc@gmail.com";
   const ValidPassword = "abc123#";
 
   const submitForm = () => {
     try {
+      console.log("Submit button clicked");
       if (email === "" || password === "") {
-        alert("enter both email and password");
+        alert("Enter both email and password");
       } else if (email === ValidEmail && password === ValidPassword) {
+        console.log("Valid credentials. Redirecting...");
         route.push("/dashboard");
       } else {
-        alert("invalid email and password");
+        alert("Invalid email and password");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -106,15 +108,15 @@ const login = () => {
             </div>
             <p className="text-[#4276d7] font-sm my-2">
               {" "}
-              <Link href="#">Forget password ?</Link>
+              <Link href="/login">Forget password ?</Link>
             </p>
             <Button
               className="bg-[#3c80ef] text-white py-2 px-2 rounded-md w-full"
-              action={() => submitForm}
+              action={submitForm}
               label="Sign In"
             />
           </form>
-          <Link href="#">
+          <Link href="/login">
             <p className="text-center mt-4 text-[#858585]">
               Don't have an Account?
               <span className="text-[#4276d7] font-sm"> Register here</span>
