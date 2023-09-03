@@ -7,13 +7,30 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 const login = () => {
+  const route = useRouter();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const submitForm = () => {};
+  const ValidEmail = "abc@gmail.com";
+  const ValidPassword = "abc123#";
+
+  const submitForm = () => {
+    try {
+      if (email === "" || password === "") {
+        alert("enter both email and password");
+      } else if (email === ValidEmail && password === ValidPassword) {
+        route.push("/dashboard");
+      } else {
+        alert("invalid email and password");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div
@@ -92,7 +109,7 @@ const login = () => {
               <Link href="#">Forget password ?</Link>
             </p>
             <Button
-              className="bg-black text-white py-2 px-2 rounded-md w-full"
+              className="bg-[#3c80ef] text-white py-2 px-2 rounded-md w-full"
               action={() => submitForm}
               label="Sign In"
             />

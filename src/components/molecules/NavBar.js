@@ -81,7 +81,10 @@ const NavBar = () => {
           </div>
           <div className="flex flex-col justify-center items-center w-full shadow-md rounded-md py-3">
             {board?.map((item, index) => (
-              <div className="transition-all cursor-pointer w-full py-2 px-5 text-white font-bold hover:bg-white hover:text-black ">
+              <div
+                className="transition-all cursor-pointer w-full py-2 px-5 text-white font-bold hover:bg-white hover:text-black "
+                key={index}
+              >
                 {item.name}
               </div>
             ))}

@@ -55,6 +55,7 @@ const SideComponent = () => {
                 src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg"
                 fill
                 priority
+                alt="profile"
               />
             </div>
           </div>
