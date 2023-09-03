@@ -1,4 +1,11 @@
 import { Button } from "@/components/atoms";
+import {
+  faDiscord,
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,16 +16,39 @@ const login = () => {
   const submitForm = () => {};
 
   return (
-    <div className="md:flex md:flex-row flex flex-col justify-between items-center gap-2 h-screen">
+    <div
+      className="md:flex md:flex-row flex flex-col justify-between items-center h-screen "
+      style={{
+        backgroundImage:
+          "linear-gradient(280deg, #f8faff 55%, transparent 40%, #3c80ef 20%)",
+      }}
+    >
       {/* for desktop and tablet screen */}
-      <div className="bg-black  md:w-2/5  h-full md:flex md:justify-center md:items-center hidden">
-        <h1 className="text-white text-6xl font-bold">Board.</h1>
+      <div className=" md:w-2/5  h-full md:flex md:flex-col md:justify-around hidden">
+        <div className="flex justify-start">
+          <h2 className="text-white text-2xl px-4 py-2 font-bold">Logo</h2>
+        </div>
+        <h1 className="text-white text-6xl font-bold text-center">Board.</h1>
+        <div className="flex justify-center items-center space-x-5">
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            className="text-white w-8 h-8 cursor-pointer"
+          />
+          <FontAwesomeIcon
+            icon={faTwitter}
+            className="text-white w-8 h-8 cursor-pointer"
+          />
+          <FontAwesomeIcon
+            icon={faGithub}
+            className="text-white w-8 h-8 cursor-pointer"
+          />
+          <FontAwesomeIcon
+            icon={faDiscord}
+            className="text-white w-8 h-8 cursor-pointer"
+          />
+        </div>
       </div>
-      {/* for mobile screen view only */}
-      <div className="bg-black w-full flex justify-center items-center md:hidden py-3">
-        <h1 className="text-white text-3xl font-bold">Board.</h1>
-      </div>
-      <div className="md:w-3/5 bg-[#f5f5f5] h-full flex justify-center items-center w-full px-4 py-5 ">
+      <div className="md:w-3/5  h-full flex justify-center items-center w-full px-4 py-5 ">
         <div className="py-5 px-2 space-y-4">
           <div>
             <h1 className="text-2xl font-bold">Sign In</h1>
@@ -30,8 +60,8 @@ const login = () => {
               label="Sign In With Google"
             />
             <Button
-              bannerImage="https://img.icons8.com/color/48/000000/google-logo.png"
-              label="Sign In With Google"
+              bannerImage="https://img.icons8.com/?size=512&id=86009&format=png"
+              label="Sign In With Apple"
             />
           </div>
           <form className="px-6 py-6 bg-[#ffffff] w-full space-y-3 rounded-md">

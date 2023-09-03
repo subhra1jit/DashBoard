@@ -1,5 +1,10 @@
+export { default as AppleImage } from "./appleImage";
 export { default as BellIcon } from "./bellIcon";
 export { default as DashboardIcon } from "./dashboardIcon";
+export { default as LikeIcon } from "./likeIcon";
+export { default as MenuIcon } from "./menuIcon";
+export { default as PeopleIcon } from "./peopleIcon";
+export { default as RevenueIcon } from "./revenueIcon";
 export { default as ScheduleIcon } from "./scheduleIcon";
 export { default as SearchIcon } from "./searchIcon";
 export { default as SettingIcon } from "./settingIcon";

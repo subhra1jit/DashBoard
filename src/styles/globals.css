@@ -7,3 +7,28 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px; /* Width of the scrollbar */
+}
+
+/* Track (the area on which the scrollbar is displayed) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  display: hidden;
+  /* Background color of the track */
+}
+::-webkit-scrollbar-track :hover {
+  display: block;
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
+}
