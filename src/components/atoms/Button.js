@@ -5,7 +5,7 @@ const Button = ({
   fontSize,
   className,
   label = "",
-  action = () => {},
+  action,
   bannerImage,
 }) => {
   return (

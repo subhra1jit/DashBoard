@@ -11,7 +11,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 
 const login = () => {
-  const route = useRouter();
+  const router = useRouter();
+  console.log(router);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,18 +20,15 @@ const login = () => {
   const ValidPassword = "abc123#";
 
   const submitForm = () => {
-    try {
-      console.log("Submit button clicked");
-      if (email === "" || password === "") {
-        alert("Enter both email and password");
-      } else if (email === ValidEmail && password === ValidPassword) {
-        console.log("Valid credentials. Redirecting...");
-        route.push("/dashboard");
-      } else {
-        alert("Invalid email and password");
-      }
-    } catch (err) {
-      console.error(err);
+    if (email === "" || password === "") {
+      alert("Enter both email and password");
+    } else if (email === ValidEmail && password === ValidPassword) {
+      console.log("Valid credentials. Redirecting...");
+      router.push("/dashboard");
+    } else {
+      alert(
+        "Invalid email and password to use the application please used email:'abc@gmail.com' and password : 'abc123#' "
+      );
     }
   };
 
@@ -83,7 +81,7 @@ const login = () => {
               label="Sign In With Apple"
             />
           </div>
-          <form className="px-6 py-6 bg-[#ffffff] w-full space-y-3 rounded-md">
+          <div className="px-6 py-6 bg-[#ffffff] w-full space-y-3 rounded-md">
             <div className="space-y-2">
               <label>Email address</label>
               <input
@@ -115,7 +113,7 @@ const login = () => {
               action={submitForm}
               label="Sign In"
             />
-          </form>
+          </div>
           <Link href="/login">
             <p className="text-center mt-4 text-[#858585]">
               Don't have an Account?
